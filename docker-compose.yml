@@ -1,0 +1,17 @@
+version: '3'
+services:
+  proxy:
+    build: ./
+    networks:
+      - example
+      - other
+    ports:
+      - 80:80
+
+networks:
+  example:
+    external:
+      name: example_default
+  other:
+    external:
+      name: other_default
